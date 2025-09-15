@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AB Crafts</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome Free CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Top image banner -->
+<section class="banner">
+  <div class="image-strip">
+    <!-- One image box will be reused for slideshow -->
+    <div class="img-box"><img id="slideshow-img" src="/vexel/img1.png" alt="slideshow"></div>
+
+    <!-- Keep other img-boxes for larger screens -->
+    <div class="img-box extra"><img src="/vexel/img2 (2).jpg" alt=""></div>
+    <div class="img-box extra"><img src="/vexel/img3.jpg" alt=""></div>
+    <div class="img-box extra"><img src="/vexel/img4.jpg" alt=""></div>
+    <div class="img-box extra"><img src="/vexel/img5.png" alt=""></div>
+    <div class="img-box extra"><img src="/vexel/img6.jpg" alt=""></div>
+    <div class="img-box extra"><img src="/vexel/img7.png" alt=""></div>
+  </div>
+</section>
+
+
+  <!-- Info Section -->
+<section class="info">
+  <div class="left">
+    <h1>AB | CRAFTS</h1>
+    <p>
+      I make vexel art and graphite drawings. I also do graphic design and build websites.  
+      Check out my work to see what I can create for you.
+    </p>
+
+    <!-- Socials moved inside left -->
+    <div class="socials">
+      <a href="https://www.facebook.com/adrianjw.bilgera/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <button class="about-btn" onclick="window.open('aboutme.html', '_blank')">ABOUT ADRIAN</button>
+    </div>
+  </div>
+
+  <!-- Right buttons stay the same -->
+  <div class="right">
+    <a href="vexel.html" class="btn gallery"><i class="fas fa-image"></i> GALLERY</a>
+    <a href="aboutme.html#proj" class="btn projects"><i class="fas fa-clipboard-list"></i> PROJECTS</a>
+    <a href="aboutme.html#contact" class="btn contact"><i class="fas fa-envelope"></i> CONTACT ME</a>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slideshowImg = document.getElementById("slideshow-img");
+
+    const images = [
+      "/vexel/img1.png",
+      "/vexel/img2 (2).jpg",
+      "/vexel/img3.jpg",
+      "/vexel/img4.jpg",
+      "/vexel/img5.png",
+      "/vexel/img6.jpg",
+      "/vexel/img7.png"
+    ];
+
+    let index = 0;
+    let interval;
+
+    function startSlideshow() {
+      if (!interval) {
+        interval = setInterval(() => {
+          index = (index + 1) % images.length;
+          slideshowImg.src = images[index];
+        }, 1500);
+      }
+    }
+
+    function stopSlideshow() {
+      clearInterval(interval);
+      interval = null;
+      slideshowImg.src = images[0];
+    }
+
+    function checkScreenSize() {
+      if (window.innerWidth <= 500) {
+        startSlideshow();
+      } else {
+        stopSlideshow();
+      }
+    }
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+  });
+</script>
+
+
+</body>
+</html>

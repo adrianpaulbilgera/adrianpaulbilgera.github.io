@@ -1,0 +1,300 @@
+
+/* =======================
+   MOBILE RESPONSIVE STYLES
+   Max-width: 767px
+======================= */
+@media (max-width: 767px) {
+
+  /* === NAVBAR === */
+
+  html, body {
+  overflow-x: hidden;
+}
+
+  .navbar {
+    padding: 15px 20px;
+    justify-content: space-between;
+    position:fixed;
+  }
+
+  .navlogo {
+    position: static;
+    margin: 0;
+  }
+
+  .nav-links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* === ABOUT SECTION === */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes image down */
+  align-items: center;
+  padding: 60px 20px 0; /* remove bottom padding */
+  margin-top: 50px;
+  min-height: auto;
+
+}
+.about-left {
+  margin: 0;
+  text-align: center;
+}
+  .about-left h1 {
+    font-size: 1.9rem;
+  }
+
+  .about-left .desc {
+    font-size: 0.9rem;
+    text-align: justify;
+  }
+
+ 
+.about-right {
+  margin-top: 30px;
+  align-self: stretch;   /* take full width */
+  display: flex;
+  justify-content: center;
+}
+
+.about-right img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 0;      /* ✅ remove gap at bottom */
+  display: block;
+}
+
+  /* === CAROUSEL === */
+  .carousel {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .slide img {
+    width: 220px;
+    height: 320px;
+  }
+
+  .slide.active img {
+    width: 260px;
+    height: 360px;
+  }
+
+  .caption {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  /* === PROJECTS === */
+.projects,
+  .projects1,
+  .projects2 {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+ .logo,
+  .vexel,
+  .feat {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ✅ 2 images per row */
+    gap: 15px;
+    justify-content: center;
+  }
+  .feat{
+    margin-top: 100px;
+  }
+
+
+  .logo .card,
+  .vexel .card,
+  .feat .card {
+    width: 100%;       /* Take full available width */
+    max-width: 180px;  /* Keep them from getting too big */
+    margin: auto;
+  }
+
+  .logo-desc,
+  .vexel-desc,
+  .feat-desc {
+    margin: 0;
+    text-align: center;
+  }
+
+  .logo-heading,
+  .vexel-heading,
+  .feat-heading {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .logo-desc,
+  .vexel-desc,
+  .feat-desc {
+    margin-left: 0;
+    text-align: center;
+  }
+
+ .description,
+.vex-description,
+.feat-description {
+  font-size: 1rem;
+  white-space: normal;
+  text-align: justify;      /* make text justified */
+  margin: 0 auto;           /* center block horizontally */
+  padding: 0 20px;          /* left & right spacing */
+  max-width: 90%;           /* keep it from spanning full width */
+  margin-top: 35px;
+}
+.btn1{
+  margin-bottom: 20px;
+margin-left: 40px;
+margin-top: 30px;
+}
+
+
+  /* === TOOLS === */
+  .tools-grid.first-row,
+  .tools-grid.second-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    width: 90%;
+    margin: auto;
+  }
+
+  /* === CONTACT === */
+  .contact-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .contact-info {
+    margin: 0;
+    text-align: center;
+  }
+
+  .contact-info h1 {
+    font-size: 2rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  /* === FOOTER === */
+  .footer-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .author {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .socials{
+    display: none;
+  }
+  
+}
+    
+
+
+@media (max-width: 767px) {
+  .carousel { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 380px;
+    margin: 0 auto;
+
+    /* ✅ keep consistent height for all slides */
+    min-height: 520px; /* adjust based on tallest image + caption */
+  }
+
+  .carousel .slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .carousel .slide.active {
+    display: flex;
+  }
+
+  .carousel .slide img {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    display: block;
+  }
+
+  .carousel .caption {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  /* ✅ Radio buttons fixed at bottom */
+  .carousel .controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+
+  .carousel .controls input[type="radio"] {
+    cursor: pointer;
+  }
+  .carousel{
+    margin-top: 50px;
+  }
+  
+}
+
+/* =======================
+   TABLET RESPONSIVE STYLES
+   Min-width: 768px and Max-width: 1024px*/
+
+   

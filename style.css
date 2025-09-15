@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+/* -------- Banner -------- */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.image-strip {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 20px;
+}
+
+/* Diagonal container for each image */
+.img-box {
+  width: 200px;
+  height: 350px;
+  overflow: hidden;       /* keeps zoom inside */
+  border-radius: 10px;
+  transform: skew(-10deg);  /* diagonal frame */
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skew(10deg) scale(1.3); /* always zoomed in */
+}
+
+
+
+
+/* -------- Info Section -------- */
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 10%;
+  background: #111;
+  color: #fff;
+}
+
+.info .left {
+  width: 55%;
+}
+
+.info h1 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: lexend giga, sans-serif;
+}
+
+.info p {
+  font-size: 16px;
+  margin: 15px 0 25px;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 20px;
+  background: #222;
+  width: 45px;         /* same width */
+  height: 45px;        /* same height */
+  display: flex;       /* center icon */
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;  /* makes it a circle */
+  transition: 0.3s;
+  text-decoration: none;}
+
+
+.socials a:hover {
+  background: #e72828;
+}
+.img-box:nth-child(1) { margin-top: 0; }
+.img-box:nth-child(2) { margin-top: 40px; }
+.img-box:nth-child(3) { margin-top: 0px; }
+.img-box:nth-child(4) { margin-top: 40px; }
+.img-box:nth-child(5) { margin-top: 0px; }
+.img-box:nth-child(6) { margin-top: 40px; }
+.img-box:nth-child(7) { margin-top: 0px; }
+
+
+
+
+.about-btn {
+  background: #850606;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.about-btn:hover {
+  background: #554949;
+   padding: 10px 18px;
+
+}
+
+/* -------- Right Buttons -------- */
+.info .right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 220px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.gallery, .projects {
+  background: #111;
+  color: #fff;
+  border: 1px solid #fff;
+  width: 350px;
+  text-decoration: none;
+}
+
+.contact {
+  background: #e74c3c;
+  color: #fff;
+    width: 350px;
+    text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #e74c3c;
+}
+
+/* ...existing code... */
+
+/* -------- Responsive Styles -------- */
+@media (max-width: 1100px) {
+  .info {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 40px 5%;
+  }
+  .info .left, .info .right {
+    width: 100%;
+  }
+  .info .right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  .btn {
+    width: 100%;
+    max-width: 220px;
+  }
+  .gallery, .projects, .contact {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 800px) {
+  .image-strip {
+    gap: 8px;
+    padding: 10px 5px;
+  }
+  .img-box {
+    width: 120px;
+    height: 180px;
+  }
+  .info h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-strip {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .img-box {
+    width: 48vw;
+    max-width: 160px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+  .info {
+    padding: 25px 2%;
+  }
+  .info h1 {
+    font-size: 22px;
+  }
+  .btn, .gallery, .projects, .contact {
+    font-size: 14px;
+    padding: 10px;
+    max-width: 100%;
+    width: 100%;
+  }
+  .socials {
+    gap: 8px;
+  }
+}
+/* Show only 1 image at smallest screens */
+@media (max-width: 500px) {
+  .image-strip {
+    justify-content: center;
+  }
+
+  .img-box {
+    display: none; /* hide all */
+  }
+
+  .img-box:first-child {
+    display: block; /* show only the first */
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .img-box:first-child img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* -------- Smallest Screens Adjustments -------- */
+@media (max-width: 500px) {
+  /* Reset image to normal */
+  .img-box:first-child {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    transform: none;   /* remove skew */
+    border-radius: 0;  /* remove rounded frame */
+  }
+
+  .img-box:first-child img {
+    transform: none;   /* remove skew & zoom */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Info section layout */
+  .info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info .left {
+    order: 1;
+    width: 100%;
+  }
+
+  .info .right {
+    order: 2;                  /* show buttons next */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  /* Social links go last */
+  .socials {
+    order: 3; 
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn, .gallery, .projects, .contact {
+    width: 100%;
+    max-width: 280px;
+    align-self: center; /* center buttons */
+  }
+/* Center the slideshow */
+.image-strip {
+  justify-content: center;  /* center horizontally */
+}
+
+/* Slideshow image container as portrait rectangle */
+#slideshow-img {
+  display: block;
+  width: 90vw;        /* narrower width */
+  max-width: 300px;   /* limit width */
+  height: 380px;      /* taller height for portrait */
+  object-fit: cover;  /* crop without distortion */
+  border-radius: 12px;
+  margin: 0 auto;     /* center horizontally */
+}
+
+
+}

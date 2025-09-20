@@ -297,4 +297,150 @@ margin-top: 30px;
    TABLET RESPONSIVE STYLES
    Min-width: 768px and Max-width: 1024px*/
 
-   
+   /* ========== TABLET RESPONSIVE (iPad 768px – 1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* About Section */
+  .about {
+    flex-direction: column;  /* stack left + right */
+
+    margin-top: 0;
+    text-align: center;
+    justify-content: space-between;
+      padding: 60px 50px 0;
+    
+  }
+    html, body {
+  overflow-x: hidden;
+}
+
+  .about-left {
+    margin-top: 40px;
+    max-width: 100%;
+  }
+
+  .about-left h1 {
+    font-size: 36px;   /* smaller heading */
+  }
+
+  .about-left .desc {
+    font-size: 15px;
+  }
+
+  .about-right {
+    margin-top: 30px;
+  }
+
+  .about-right img {
+    max-width: 50%;    /* scale image */
+    margin-bottom: 0;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 15px 20px;
+    gap: 20px;
+  }
+
+  .navlogo {
+    position: static;   /* keep logo inside flow */
+    margin: 0;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* Portfolio / Carousel */
+  .carousel {
+    height: auto;      /* let content define height */
+  }
+
+  .slides {
+    gap: 20px;
+  }
+
+  .slide img {
+    width: 220px;
+    height: 320px;
+  }
+
+  .slide.active img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .caption {
+    font-size: 1.2rem;
+    padding: 20px 10px;
+  }
+
+ /* Projects, Logos, Vexel, Feat */
+.projects,
+.projects1,
+.projects2 {
+  flex-direction: column;  /* stack logos & descriptions */
+  gap: 40px;
+}
+
+.logo,
+.vexel,
+.feat {
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;   /* center cards in grid */
+}
+
+.logo .card,
+.vexel .card,
+.feat .card {
+  width: 300px;   /* ⬅ smaller width */
+  height: 300px;  /* ⬅ smaller height */
+}
+
+  /* Tools */
+  .tools-grid.first-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools-grid.second-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact */
+  .contact-container {
+    flex-direction: column;
+    padding: 40px;
+    height: auto;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .contact-info {
+    margin: 0;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .author {
+    position: static;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
